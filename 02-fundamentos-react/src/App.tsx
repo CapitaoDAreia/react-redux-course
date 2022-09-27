@@ -27,16 +27,16 @@ export default () => {
 
         <h1>React Fundamentals</h1>
         <div className="wrapper" >
-            <Card title="#04 - Random Chalenge" >
+            <Card title="#04 - Random Chalenge" color="#D2001A">
                 <Random num1={1} num2={50} />
             </Card>
 
 
-            <Card title="#03 - Fragment Lesson">
+            <Card title="#03 - Fragment Lesson" color="#400D51">
                 <Fragment />
             </Card>
 
-            <Card title="#02 - WithParameter Lesson" >
+            <Card title="#02 - WithParameter Lesson" color="#562B08">
                 <WithParameter
                     title="Second Component"
                     subtitle="WithParameter Component"
@@ -44,7 +44,7 @@ export default () => {
                 />
             </Card>
 
-            <Card title="#01 - First Lesson" >
+            <Card title="#01 - First Lesson" color="#FD841F">
                 <First />
             </Card>
         </div>
