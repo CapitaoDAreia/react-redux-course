@@ -1,5 +1,9 @@
 import React from "react";
 
+/*
+    Neste componente os valores estão sendo recebidos no APP, quando chamamos o componente,
+    e recebidos e tratados aqui.
+*/
 
 interface ParameterProps {
     num1: number
