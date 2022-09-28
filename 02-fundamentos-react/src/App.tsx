@@ -7,6 +7,7 @@ import Fragment from "./components/basics/Fragment";
 import Random from "./components/basics/Random";
 import WithParameter from "./components/basics/WithParameter";
 import Card from "./components/layout/Card";
+import ListPeople from "./components/loop/ListPeople";
 
 /*
     REACTDOM - https://pt-br.reactjs.org/docs/rendering-elements.html
@@ -30,6 +31,14 @@ export default () => {
         <h1>React Fundamentals</h1>
         <div className="wrapper" >
 
+
+            <Card title="#06 - Loop Lesson" color="#D3555A">
+                <ListPeople
+                    family="List People - Repetition"
+                ></ListPeople>
+            </Card>
+
+
             <Card title="#05 - Family Lesson" color="#D3555A">
 
                 <Family lastname="The Wolf" >
@@ -38,9 +47,9 @@ export default () => {
                     <FamilyMember name="Lucas" />
                     <FamilyMember name="Igor" />
 
-            
+
                 </Family>
-            
+
             </Card>
 
             <Card title="#04 - Random Chalenge" color="#D2001A">
