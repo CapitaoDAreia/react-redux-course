@@ -1,5 +1,7 @@
 import React from "react";
 import './App.scss'
+import Family from "./components/basics/Family";
+import FamilyMember from "./components/basics/FamilyMember";
 import First from "./components/basics/First";
 import Fragment from "./components/basics/Fragment";
 import Random from "./components/basics/Random";
@@ -27,6 +29,20 @@ export default () => {
 
         <h1>React Fundamentals</h1>
         <div className="wrapper" >
+
+            <Card title="#05 - Family Lesson" color="#D3555A">
+
+                <Family lastname="The Wolf" >
+                    {/* Declarados aqui e recebidos dentro do componente FAMILYcomo childrens */}
+                    <FamilyMember name="August" />
+                    <FamilyMember name="Lucas" />
+                    <FamilyMember name="Igor" />
+
+            
+                </Family>
+            
+            </Card>
+
             <Card title="#04 - Random Chalenge" color="#D2001A">
                 <Random num1={1} num2={50} />
             </Card>
