@@ -8,6 +8,7 @@ import Random from "./components/basics/Random";
 import WithParameter from "./components/basics/WithParameter";
 import Card from "./components/layout/Card";
 import ListPeople from "./components/loop/ListPeople";
+import ListProduct from "./components/loop/ListProduct";
 
 /*
     REACTDOM - https://pt-br.reactjs.org/docs/rendering-elements.html
@@ -31,6 +32,9 @@ export default () => {
         <h1>React Fundamentals</h1>
         <div className="wrapper" >
 
+            <Card title="#07 - Loop Chalenge" color="#F9811F">
+                <ListProduct />
+            </Card>
 
             <Card title="#06 - Loop Lesson" color="#D3555A">
                 <ListPeople
