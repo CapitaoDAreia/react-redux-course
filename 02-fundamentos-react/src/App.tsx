@@ -6,6 +6,7 @@ import First from "./components/basics/First";
 import Fragment from "./components/basics/Fragment";
 import Random from "./components/basics/Random";
 import WithParameter from "./components/basics/WithParameter";
+import OddEven from "./components/conditional/OddEven";
 import Card from "./components/layout/Card";
 import ListPeople from "./components/loop/ListPeople";
 import ListProduct from "./components/loop/ListProduct";
@@ -31,6 +32,11 @@ export default () => {
 
         <h1>React Fundamentals</h1>
         <div className="wrapper" >
+
+
+            <Card title="#08 - Odd Even - Conditional Render" color="#G9811F">
+                <OddEven number={21} ></OddEven>
+            </Card>
 
             <Card title="#07 - Loop Chalenge" color="#F9811F">
                 <ListProduct />
