@@ -10,6 +10,7 @@ import OddEven from "./components/conditional/OddEven";
 import Card from "./components/layout/Card";
 import ListPeople from "./components/loop/ListPeople";
 import ListProduct from "./components/loop/ListProduct";
+import User from "./components/loop/User";
 
 /*
     REACTDOM - https://pt-br.reactjs.org/docs/rendering-elements.html
@@ -34,8 +35,11 @@ export default () => {
         <div className="wrapper" >
 
 
-            <Card title="#08 - Odd Even - Conditional Render" color="#G9811F">
+            <Card title="#08 - Conditional Render" color="#G9811F">
                 <OddEven number={21} ></OddEven>
+                <User
+                name="Igor"
+                />
             </Card>
 
             <Card title="#07 - Loop Chalenge" color="#F9811F">
