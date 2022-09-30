@@ -6,6 +6,9 @@ import First from "./components/basics/First";
 import Fragment from "./components/basics/Fragment";
 import Random from "./components/basics/Random";
 import WithParameter from "./components/basics/WithParameter";
+import DirectCommFat from "./components/communication/DirectCommFat";
+import DirectCommSon from "./components/communication/DirectCommSon";
+import IndirectCommFat from "./components/communication/IndirectCommFat";
 import OddEven from "./components/conditional/OddEven";
 import Card from "./components/layout/Card";
 import ListPeople from "./components/loop/ListPeople";
@@ -34,6 +37,13 @@ export default () => {
         <h1>React Fundamentals</h1>
         <div className="wrapper" >
 
+            <Card title="#10 - Indirect COmmunication Between Components" color="#C5534B">
+                <IndirectCommFat />
+            </Card>
+
+            <Card title="#09 - Direct Communication Between Components" color="#A1234A">
+                <DirectCommFat patrimony="#Father's Patrimony#" />
+            </Card>
 
             <Card title="#08 - Conditional Render" color="#G9811F">
                 <OddEven number={21} ></OddEven>
