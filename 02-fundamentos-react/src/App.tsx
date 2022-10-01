@@ -10,6 +10,7 @@ import DirectCommFat from "./components/communication/DirectCommFat";
 import DirectCommSon from "./components/communication/DirectCommSon";
 import IndirectCommFat from "./components/communication/IndirectCommFat";
 import OddEven from "./components/conditional/OddEven";
+import Counter from "./components/counter/Counter";
 import Input from "./components/formulary/Input";
 import Card from "./components/layout/Card";
 import ListPeople from "./components/loop/ListPeople";
@@ -37,6 +38,11 @@ export default () => {
 
         <h1>React Fundamentals</h1>
         <div className="wrapper" >
+
+
+            <Card title="#12 - Class Based Component - Counter" color="#F5534F">
+                <Counter initialNumber={10} initialPass={5} ></Counter>
+            </Card>
 
             <Card title="#11 - Controlled Component" >
                 <Input />
