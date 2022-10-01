@@ -10,6 +10,7 @@ import DirectCommFat from "./components/communication/DirectCommFat";
 import DirectCommSon from "./components/communication/DirectCommSon";
 import IndirectCommFat from "./components/communication/IndirectCommFat";
 import OddEven from "./components/conditional/OddEven";
+import Input from "./components/formulary/Input";
 import Card from "./components/layout/Card";
 import ListPeople from "./components/loop/ListPeople";
 import ListProduct from "./components/loop/ListProduct";
@@ -36,6 +37,10 @@ export default () => {
 
         <h1>React Fundamentals</h1>
         <div className="wrapper" >
+
+            <Card title="#11 - Controlled Component" >
+                <Input />
+            </Card>
 
             <Card title="#10 - Indirect COmmunication Between Components" color="#C5534B">
                 <IndirectCommFat />
