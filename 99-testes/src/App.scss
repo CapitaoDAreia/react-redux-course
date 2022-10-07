@@ -1,5 +1,5 @@
-.app .wrapper{
+.app{
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    height: 100vh;
 }
