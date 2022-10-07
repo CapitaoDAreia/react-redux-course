@@ -48,6 +48,15 @@ const Menu = (props: MenuProps) =>{
                 <li>
                     <Link to="/about">ABOUT</Link>
                 </li>
+                <li>
+                    <Link to="/param/myParameter1">Param #01</Link>
+                </li>
+                <li>
+                    <Link to="/param/myParameter2">Param #02</Link>
+                </li>
+                <li>
+                    <Link to="/anywhere">Teste 404</Link>
+                </li>
             </ul>
             </nav>
         </MenuStyled>
