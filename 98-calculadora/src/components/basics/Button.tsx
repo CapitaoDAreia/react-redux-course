@@ -32,7 +32,7 @@ const Button=(props: ButtonProps): React.ReactElement => {
     }
 
     return(
-        <ButtonStyled style={ButtonPropsDinamicStyle}>
+        <ButtonStyled style={ButtonPropsDinamicStyle} >
             {props.label}
         </ButtonStyled>
     )

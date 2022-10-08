@@ -16,7 +16,25 @@ const CalculatorStyled = styled.div`
 `;
 
 export default class Calculator extends React.Component {
+
+    clearMemory() {
+        console.log('cleaning...')
+    }
+
+    setOperation(operation: any) {
+        console.log(operation)
+    }
+
+    addDigit(n: any) {
+        console.log(n)
+    }
+
+
     render() {
+
+        const addDigit = (n: any) => { this.addDigit(n) }
+        const setOperation = (op: any) => { this.setOperation(op) }
+
         return (
             <CalculatorStyled>
                 <Display value={'100'} />
