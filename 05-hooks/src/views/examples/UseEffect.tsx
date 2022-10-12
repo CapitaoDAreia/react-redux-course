@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import PageTitle from '../../components/layout/PageTitle'
 import * as CSS from 'csstype'
+import SectionTitle from '../../components/layout/SectionTitle'
 
 
 /*
@@ -34,6 +35,7 @@ const ComponentsStyle: CSS.Properties = {
     textAlign: 'center'
 }
 
+
 const UseEffect = (props: {}) => {
     const [text, setText] = useState('text')
     const [color, setColor] = useState('blue')
@@ -44,12 +46,23 @@ const UseEffect = (props: {}) => {
         setText(`A cor mudou ${number+1} vezes`)
     }, [color])
 
+    //Desafio
+    const [value, setValue] = useState('1')
+    const [status, setStatus] = useState('1')
+    useEffect(function(){
+
+        let valueField = parseInt(value)
+        valueField % 2 === 0 ? setStatus('Par') : setStatus('Ímpar')
+    })
+
     return (
         <div className="UseEffect">
             <PageTitle
                 title="Hook UseEffect"
                 subtitle="Permite executar efeitos colaterais em componentes funcionais!"
             />
+
+            <SectionTitle title="Exercício #02 - useEffect" />
             <div style={DivStyle} >
                 <input
                     style={
@@ -69,8 +82,14 @@ const UseEffect = (props: {}) => {
                 onClick={()=>{setColor(color ==='blue'? 'red' : 'blue')}}
                  >Change Text Color</button>
             </div>
+
+            <SectionTitle title="Desafio - useEffect" />
+            <div style={DivStyle}>
+                <span>Status: {status}</span>
+                <input type="number" onChange={(e)=>{setValue(e.target.value)}} />
+            </div>
         </div>
     )
 }
-
+ 
 export default UseEffect
