@@ -1,9 +1,10 @@
 import './App.css'
 import React from 'react'
-import { BrowserRouter as Router } from  'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 import Menu from '../components/layout/Menu'
 import Content from '../components/layout/Content'
+import Store from '../data/Store'
 
 /*
     OS hooks são formas de extrair e reutilizar lógica de componentes com estado.
@@ -21,13 +22,15 @@ import Content from '../components/layout/Content'
 
 const App = props => {
 
-    return (
-                <div className="App">
-                    <Router>
-                        <Menu />
-                        <Content />
-                    </Router>
-                </div>
+    return (//O componente Store (AppContext.Provider) envolve todos os nossos componentes, compartilhando com eles os estados necessários para que a aplicação funcione corretamente.
+        <Store> 
+            <div className="App">
+                <Router>
+                    <Menu />
+                    <Content />
+                </Router>
+            </div>
+        </Store>
     )
 }
 
