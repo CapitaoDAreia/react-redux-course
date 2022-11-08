@@ -1,5 +1,5 @@
-import React from 'react'
-import PageTitle from '../../components/layout/PageTitle'
+import React from "react";
+import PageTitle from "../../components/layout/PageTitle";
 
 /*
     De acordo com a documentação do w3c, o useReducer é semelhante ao useState, mas permite
@@ -22,15 +22,63 @@ import PageTitle from '../../components/layout/PageTitle'
 
 */
 
-const UseReducer = () => {
-    return (
-        <div className="UseReducer">
-            <PageTitle
-                title="Hook UseReducer"
-                subtitle="Uma outra forma de ter estado em componentes funcionais!"
-            />
-        </div>
-    )
+type initialStateType = {
+  click: number;
+  info: string;
+};
+
+type action = {
+  type: string;
+  payload: number;
+};
+
+//Estado inicial a ser servido para o useReducer
+const initialState = {
+  click: 0,
+  info: "Estado inicial",
+};
+
+//Função reducer, responsável por controlar a lógica do gerenciamento de estado
+function reducer(
+  state: typeof initialState /*Para tipar a state, poderíamos usar o tipo initialStateType*/,
+  action: action
+) {
+  switch (action.type) {
+    case "increment":
+      return { ...state, click: state.click + action.payload };
+    default:
+      return state;
+  }
 }
 
-export default UseReducer
+const UseReducer = () => {
+  //useReducer - Recebe a função reducer, responsável por gerenciar a lógica que determinará as mudanças de estado, e recebe
+  //os valores iniciais do estado a ser gerenciado. Provê um estado com base nos valores recebidos e uma função que o altera.
+  const [state, dispatch] = React.useReducer(reducer, initialState);
+
+  return (
+    <div className="UseReducer">
+      <PageTitle
+        title="Hook UseReducer"
+        subtitle="Uma outra forma de ter estado em componentes funcionais!"
+      />
+      <div className="center">
+        <span style={{ marginBottom: "10px", fontSize: "1.5rem" }}>
+          Valor inicial do estado: {state.click}
+        </span>
+        <div>
+          <button
+            style={{ width: "100px", height: "40px" }}
+            onClick={() => dispatch({ type: "increment", payload: 1 })} 
+            //A função dispatch é responsável por alterar o estado, recebe um objeto com o tipo da ação e com o payload. O tipo
+            //da ação determinará o gerenciamento do estado na função reducer.
+          >
+            Increment
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default UseReducer;
