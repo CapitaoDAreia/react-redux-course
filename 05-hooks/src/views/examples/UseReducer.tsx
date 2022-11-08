@@ -34,7 +34,7 @@ type action = {
 
 //Estado inicial a ser servido para o useReducer
 const initialState = {
-  click: 0,
+  click: 1,
   info: "Estado inicial",
 };
 
@@ -45,6 +45,14 @@ function reducer(
 ) {
   switch (action.type) {
     case "increment":
+      return { ...state, click: state.click + action.payload };
+    case "multi7":
+      return { ...state, click: state.click * 7 };
+    case "div25":
+      return { ...state, click: state.click / 25 };
+    case "parseInt":
+      return { ...state, click: (state.click = Math.floor(state.click)) };
+    case "addN":
       return { ...state, click: state.click + action.payload };
     default:
       return state;
@@ -68,13 +76,45 @@ const UseReducer = () => {
         </span>
         <div>
           <button
-            style={{ width: "100px", height: "40px" }}
-            onClick={() => dispatch({ type: "increment", payload: 1 })} 
+            style={{ width: "100px", height: "40px", marginBottom: "30px" }}
+            onClick={() => dispatch({ type: "increment", payload: 1 })}
             //A função dispatch é responsável por alterar o estado, recebe um objeto com o tipo da ação e com o payload. O tipo
             //da ação determinará o gerenciamento do estado na função reducer.
           >
             Increment
           </button>
+        </div>
+      </div>
+
+      {/* 
+          Criar ação para multiplicar por 7
+          Criar ação para dividir o numero por 25
+          Criar ação para fazer parser do número para inteiro
+          Criar ação para adicionar um número N 
+      
+      */}
+      <PageTitle title="Desafio useReducer" subtitle="Te vira, mané!" />
+      <div className="center">
+        <span style={{ marginBottom: "10px", fontSize: "1.5rem" }}>valor</span>
+        <div>
+          <input readOnly type="text" value={state.click} />
+          <div>
+            <button onClick={() => dispatch({ type: "multi7", payload: 0 })}>
+              X 7
+            </button>
+
+            <button onClick={() => dispatch({ type: "div25", payload: 0 })}>
+              / 25
+            </button>
+
+            <button onClick={() => dispatch({ type: "parseInt", payload: 0 })}>
+              parse
+            </button>
+
+            <button onClick={() => dispatch({ type: "addN", payload: 10 })}>
+              + n=10
+            </button>
+          </div>
         </div>
       </div>
     </div>
