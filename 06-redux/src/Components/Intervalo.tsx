@@ -1,8 +1,13 @@
-import React from "react";
-import styled from "styled-components";
 import Card from "./Card";
 
-const Intervalo = () => {
+interface IntervaloProps {
+  min: number;
+  max: number;
+  onMinChange: (n: number) => void;
+  onMaxChange: (n: number) => void;
+}
+
+const Intervalo = (props: IntervaloProps) => {
   return (
     <Card title="CARD #01" headColor="#472121" bodyColor="#580903">
       <div
@@ -14,25 +19,37 @@ const Intervalo = () => {
         <span
           style={{
             flex: "1",
-            display: 'flex',
-            gap: '10px',
-            justifyContent: 'center'
+            display: "flex",
+            gap: "10px",
+            justifyContent: "center",
           }}
         >
           <strong>Mínimo</strong>
-          <input type="number" value={0} readOnly />
+          <input
+            type="number"
+            value={props.min}
+            onChange={(e: any) => {
+              props.onMinChange(+e.target.value);
+            }}
+          />
         </span>
 
         <span
           style={{
             flex: "1",
-            display: 'flex',
-            gap: '10px',
-            justifyContent: 'center'
+            display: "flex",
+            gap: "10px",
+            justifyContent: "center",
           }}
         >
           <strong>Máximo</strong>
-          <input type="number" value={0} readOnly />
+          <input
+            type="number"
+            value={props.max}
+            onChange={(e: any) => {
+              props.onMaxChange(+e.target.value);
+            }}
+          />
         </span>
       </div>
     </Card>

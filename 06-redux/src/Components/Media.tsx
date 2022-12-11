@@ -1,6 +1,9 @@
 import Card, { CardProps } from "./Card";
 
-interface MediaProps extends CardProps {}
+interface MediaProps extends CardProps {
+    min: number
+    max: number
+}
 
 const Media = (props: MediaProps) => {
   return (
@@ -19,8 +22,8 @@ const Media = (props: MediaProps) => {
             justifyContent: 'center'
           }}
         >
-            <span>Resultado:</span>
-          <strong>5</strong>
+            <span>Média:</span>
+          <strong>{(props.max + props.min)/2}</strong>
         </span>
       </div>
     </Card>
