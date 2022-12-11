@@ -1,5 +1,9 @@
 import React from "react";
-import Card from "./Components/Card";
+import Media from "./Components/Media";
+import Soma from "./Components/Soma";
+import Sorteio from "./Components/Sorteio";
+
+
 import styled from "styled-components";
 import Intervalo from "./Components/Intervalo";
 
@@ -28,17 +32,11 @@ function App() {
       </Row>
 
       <Row>
-        <Card title="CARD #02" headColor="#050f31" bodyColor="#19223f">
-          Card
-        </Card>
+        <Media title="CARD #02" headColor="#050f31" bodyColor="#19223f"></Media>
 
-        <Card title="CARD #03" headColor="#1d4225" bodyColor="#224e2b">
-          Card
-        </Card>
+        <Soma title="CARD #03" headColor="#1d4225" bodyColor="#224e2b"></Soma>
 
-        <Card title="CARD #04" headColor="#36051e" bodyColor="#491932">
-          Card
-        </Card>
+        <Sorteio title="CARD #04" headColor="#36051e" bodyColor="#491932"></Sorteio>
       </Row>
     </Container>
   );
