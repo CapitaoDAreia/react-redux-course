@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "./Components/Card";
-
 import styled from "styled-components";
+import Intervalo from "./Components/Intervalo";
 
 const Container = styled.div`
   display: flex;
@@ -22,13 +22,9 @@ function App() {
     <Container>
       <Title>Exercício React-Redux</Title>
       <Row>
-        <Card title="CARD #01" headColor="#472121" bodyColor="#580903">
-          Card
-        </Card>
+        <Intervalo></Intervalo>
 
-        <Card title="CARD #01" headColor="#1d4225" bodyColor="#224e2b">
-          Card
-        </Card>
+
       </Row>
 
       <Row>
@@ -36,7 +32,11 @@ function App() {
           Card
         </Card>
 
-        <Card title="CARD #02" headColor="#36051e" bodyColor="#491932">
+        <Card title="CARD #03" headColor="#1d4225" bodyColor="#224e2b">
+          Card
+        </Card>
+
+        <Card title="CARD #04" headColor="#36051e" bodyColor="#491932">
           Card
         </Card>
       </Row>

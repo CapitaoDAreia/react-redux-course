@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 interface CardProps {
-    children: JSX.Element | string
+    children: JSX.Element | string | JSX.Element[]
     title: string
     headColor: string
     bodyColor: string
