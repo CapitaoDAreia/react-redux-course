@@ -1,8 +1,7 @@
 import Card, { CardProps } from "./Card";
 
 interface MediaProps extends CardProps {
-    min: number
-    max: number
+
 }
 
 const Media = (props: MediaProps) => {
@@ -23,7 +22,7 @@ const Media = (props: MediaProps) => {
           }}
         >
             <span>Soma:</span>
-          <strong>{props.max + props.min}</strong>
+          <strong>{0}</strong>
         </span>
       </div>
     </Card>

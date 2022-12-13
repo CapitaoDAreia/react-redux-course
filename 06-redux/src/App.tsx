@@ -23,27 +23,21 @@ const Row = styled.div`
 
 function App() {
 
-  const [min, setMin] = React.useState(1)
-  const [max, setMax] = React.useState(1)
   
   return (
     <Container>
       <Title>Exercício React-Redux</Title>
       <Row>
         <Intervalo 
-        min={min} 
-        max={max} 
-        onMinChange={setMin}
-        onMaxChange={setMax}
         />
       </Row>
 
       <Row>
-        <Media min={min} max={max} title="CARD #02" headColor="#050f31" bodyColor="#19223f"></Media>
+        <Media title="CARD #02" headColor="#050f31" bodyColor="#19223f"></Media>
 
-        <Soma min={min} max={max} title="CARD #03" headColor="#1d4225" bodyColor="#224e2b"></Soma>
+        <Soma title="CARD #03" headColor="#1d4225" bodyColor="#224e2b"></Soma>
 
-        <Sorteio min={min} max={max} title="CARD #04" headColor="#36051e" bodyColor="#491932"></Sorteio>
+        <Sorteio title="CARD #04" headColor="#36051e" bodyColor="#491932"></Sorteio>
       </Row>
     </Container>
   );

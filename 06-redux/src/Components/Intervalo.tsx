@@ -1,10 +1,7 @@
 import Card from "./Card";
 
 interface IntervaloProps {
-  min: number;
-  max: number;
-  onMinChange: (n: number) => void;
-  onMaxChange: (n: number) => void;
+
 }
 
 const Intervalo = (props: IntervaloProps) => {
@@ -27,10 +24,8 @@ const Intervalo = (props: IntervaloProps) => {
           <strong>Mínimo</strong>
           <input
             type="number"
-            value={props.min}
-            onChange={(e: any) => {
-              props.onMinChange(+e.target.value);
-            }}
+            value={0}
+
           />
         </span>
 
@@ -45,10 +40,7 @@ const Intervalo = (props: IntervaloProps) => {
           <strong>Máximo</strong>
           <input
             type="number"
-            value={props.max}
-            onChange={(e: any) => {
-              props.onMaxChange(+e.target.value);
-            }}
+            value={0}
           />
         </span>
       </div>
