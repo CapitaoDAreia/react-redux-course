@@ -1,13 +1,18 @@
 import Card, { CardProps } from "./Card";
+import { connect } from "react-redux";
 
 interface SorteioProps extends CardProps {
-
+  max: number
+  min: number
 }
 
-const Media = (props: SorteioProps) => {
+const Sorteio = (props: SorteioProps) => {
+
+  const {min, max} = props
+  const random = Math.floor(Math.random()*(max - min + 1)) + min
 
   return (
-    <Card title="Sorteio de um Números" headColor="#472121" bodyColor="#580903">
+    <Card title="Sorteio entre Min e Max" headColor="#472121" bodyColor="#580903">
       <div
         style={{
           display: "flex",
@@ -23,11 +28,18 @@ const Media = (props: SorteioProps) => {
           }}
         >
             <span>Sorteio:</span>
-          <strong>{0}</strong>
+          <strong>{random}</strong>
         </span>
       </div>
     </Card>
   );
 };
 
-export default Media;
+const mapStateToProps=(state: any)=>{
+  return{
+    max: state.numeros.max,
+    min: state.numeros.min
+  }
+}
+
+export default connect(mapStateToProps)(Sorteio);
