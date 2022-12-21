@@ -14,13 +14,22 @@ import { legacy_createStore as createStore, combineReducers } from 'redux' //O c
 
 const reducers = combineReducers({
     numeros: function(state: any, action: any){
-        return {
-            min: 7,
-            max: 31
+        switch(action.type){
+            case 'ALTERA_NUM_MIN':
+                return {
+                    ...state,
+                    min: action.payload
+                }
+            default:
+                return {
+                    min: 7,
+                    max: 31
+                }
         }
     }, 
 
     ficticio: function(state: any, action: any){
+        console.log('Reducer ficticio nomes...')
         return ['Igor', 'Daniel']
     }
 })
