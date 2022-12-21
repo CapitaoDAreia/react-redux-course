@@ -15,8 +15,8 @@ import { legacy_createStore as createStore, combineReducers } from 'redux' //O c
 const reducers = combineReducers({
     numeros: function(state: any, action: any){
         return {
-            min: 1,
-            max: 10
+            min: 7,
+            max: 31
         }
     }, 
 
