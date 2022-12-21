@@ -20,6 +20,11 @@ const reducers = combineReducers({
                     ...state,
                     min: action.payload
                 }
+            case 'ALTERA_NUM_MAXIMO':
+                return {
+                    ...state,
+                    max: action.payload
+                }
             default:
                 return {
                     min: 7,
